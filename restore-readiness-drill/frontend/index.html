@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; margin: 0;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automated Restore-Readiness Drill</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+      body { margin: 0; height: 100%; display: flex; flex-direction: column; overflow: hidden; }
+    </style>
+</head>
+<body class="flex flex-col bg-[#0F1115] text-[#E0E0E0] font-sans overflow-hidden">
+    <header class="h-16 border-b border-[#2D3139] flex items-center justify-between px-6 bg-[#15171C] shrink-0">
+        <div class="flex items-center gap-4">
+            <div class="h-8 w-8 bg-[#3B82F6] flex items-center justify-center rounded">
+                <span class="text-white font-bold text-xs">RRD</span>
+            </div>
+            <div>
+                <h1 class="text-lg font-bold text-white tracking-tight uppercase">Restore-Readiness Drill</h1>
+                <p class="text-[10px] text-gray-400 font-mono">V0.35-ALPHA // MULTIPLAYER_SESSION_STATE</p>
+            </div>
+        </div>
+        <div class="flex gap-8">
+            <div class="text-right">
+                <p class="text-[10px] uppercase text-gray-500">System Status</p>
+                <p class="text-xs font-bold text-green-400 flex items-center gap-1 justify-end">
+                    <span class="h-2 w-2 rounded-full bg-green-400"></span> DRILL ACTIVE
+                </p>
+            </div>
+            <div class="text-right">
+                <p class="text-[10px] uppercase text-gray-500">Baseline Ref</p>
+                <p class="text-xs font-mono font-bold">RTO: 60s | RPO: 30s</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-1 overflow-auto grid grid-cols-1 lg:grid-cols-12 gap-4 p-4">
+        <section class="lg:col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4" id="metrics-cards">
+            <!-- Populated via JS -->
+        </section>
+
+        <section class="lg:col-span-8 bg-[#15171C] border border-[#2D3139] rounded-lg flex flex-col overflow-hidden h-fit">
+            <div class="bg-[#1A1D24] px-4 py-2 border-b border-[#2D3139] flex justify-between items-center">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400">Drill Execution Log</h2>
+                <span class="text-[10px] font-mono text-gray-500">SORTED BY TIMESTAMP (DESC)</span>
+            </div>
+            <div class="overflow-x-auto">
+                <table id="results-table" class="w-full text-left border-collapse">
+                    <thead class="bg-[#1A1D24] text-[10px] uppercase text-gray-500">
+                        <tr>
+                            <th class="px-4 py-2 border-b border-[#2D3139]">Drill ID</th>
+                            <th class="px-4 py-2 border-b border-[#2D3139]">Backup ID</th>
+                            <th class="px-4 py-2 border-b border-[#2D3139]">Status</th>
+                            <th class="px-4 py-2 border-b border-[#2D3139]">Checksum</th>
+                            <th class="px-4 py-2 border-b border-[#2D3139]">Validation</th>
+                            <th class="px-4 py-2 border-b border-[#2D3139]">RTO (s)</th>
+                            <th class="px-4 py-2 border-b border-[#2D3139]">RPO (s)</th>
+                            <th class="px-4 py-2 border-b border-[#2D3139]">Result</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-xs font-mono">
+                        <!-- Populated via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="lg:col-span-4 flex flex-col gap-4">
+            <div class="bg-[#15171C] border border-[#2D3139] rounded-lg p-4 flex flex-col h-full">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-4">Recommendations & Insights</h2>
+                <div class="space-y-3" id="recommendations-list">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="h-8 bg-[#1A1D24] border-t border-[#2D3139] flex items-center justify-between px-6 shrink-0">
+        <div class="flex gap-4 items-center">
+            <span class="text-[10px] text-gray-500">PROJECT: restore-readiness-drill</span>
+            <span class="text-[10px] text-gray-500">|</span>
+            <span class="text-[10px] text-gray-500">ENV: LOCAL_MVP_SQLITE</span>
+        </div>
+        <div class="text-[10px] text-gray-500 font-mono" id="system-tick">
+            <!-- Time populated via JS -->
+        </div>
+    </footer>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
