@@ -1,35 +1,54 @@
-# AUTOMATED RESTORE-READINESS DRILL ARCHITECTURE
+# AUTOMATED RESTORE-READINESS DRILL ARCHITECTURE (v0.70)
 
 ## Overview
-The architecture is designed to continuously simulate multiplayer session changes, periodically snapshot backups, and subsequently run an automated engine to restore and validate those backups.
+The 70% milestone architecture expands from a basic single-stream prototype into a multi-cluster multiplayer recovery verification system. It continuously validates that high-velocity session states (player positions, inventory, scores, health, and match ticks) can be deterministically reconstructed in an ephemeral test sandbox within Recovery Time Objective (RTO <= 60s) and Recovery Point Objective (RPO <= 30s) bounds.
 
-## Diagram
+## System Topology & Architecture Diagram
 ```mermaid
 graph TD
-    A[Multiplayer Session Simulator] -->|Events & State Updates| B(Session State Store)
-    B -->|Snapshot request| C[Backup Generator]
-    C -->|Generate JSON + Checksum| D(Backup Metadata / Backup Files)
-    D -->|Candidate Backup| E[Restore-Readiness Drill Engine]
-    
-    E -->|1| F[Isolated Restore Attempt]
-    E -->|2| G[Checksum Verification]
-    E -->|3| H[Data Validation]
-    E -->|4| I[RTO/RPO Calculation]
-    
-    J[Failure Injection Module] -.->|Corrupt/Delay/Dupe| C
-    J -.->|Out-of-order| B
-    
-    F --> K(Results Database SQLite)
-    G --> K
-    H --> K
-    I --> K
-    
-    K --> L[Dashboard / HTML Report]
+    subgraph Active Game Infrastructure
+        S1[Lobby S-101: Battle Royale 50v50] --> WAL[Write-Ahead Log / Delta Stream]
+        S2[Lobby S-204: Dungeon Raid Co-op] --> WAL
+        S3[Lobby S-305: Cyber Nexus Arena] --> WAL
+        S4[Lobby S-412: Fortress Siege] --> WAL
+    end
+
+    subgraph Snapshot & Storage Tier
+        WAL --> BKP_GEN[Snapshot Engine]
+        BKP_GEN --> SHA[Cryptographic SHA-256 State Signer]
+        SHA --> COLD[(Encrypted Cold Storage Store)]
+    end
+
+    subgraph Restore-Readiness Drill Engine (Automated Daemon)
+        COLD --> EXTRACT[1. Ephemeral Sandbox Extraction]
+        EXTRACT --> CHK_AUDIT[2. SHA-256 Digest Verification]
+        CHK_AUDIT --> WAL_REPLAY[3. WAL Delta Replay & Sequence Sorter]
+        WAL_REPLAY --> DEDUP[4. Idempotency Filter & Deduplication]
+        DEDUP --> STATE_RECON[5. Deterministic State Tree Rebuilder]
+        STATE_RECON --> SLA_GATE[6. SLA Gatekeeper & Invariant Audit]
+    end
+
+    subgraph Chaos & Failure Injection Suite
+        CHAOS[Fault Injection Engine] -.->|Inject Bit-Rot| COLD
+        CHAOS -.->|Inject UDP Out-of-Order| WAL_REPLAY
+        CHAOS -.->|Inject At-Least-Once Replay| DEDUP
+        CHAOS -.->|Inject Truncated WAL / Disk Lag| SLA_GATE
+    end
+
+    subgraph Audit & Reporting
+        SLA_GATE --> METRICS[(Execution Audit Store)]
+        METRICS --> DASH[High-Density Realtime Dashboard]
+        METRICS --> SOC2[SOC2/ISO Disaster Recovery Certificate]
+        METRICS --> RCA[Automated Stakeholder & SRE Diagnostics]
+    end
 ```
 
-## Components
-1. **Multiplayer Session Simulator:** Generates continuous JSON records of player joins, leaves, and score changes.
-2. **Backup Generator:** Snapshots the simulated state and computes SHA-256 checksums.
-3. **Restore-Readiness Drill Engine:** The core coordinator. Automates the deployment of backups into an isolated test space.
-4. **Validation Service:** Compares the restored records against the pre-failure original records.
-5. **Failure Injection:** Introduces chaos (corrupted checksums, duplicated events) to ensure the engine detects faults properly.
+## Core Components (70% Implementation)
+1. **Multiplayer Cluster Simulator:** Manages multi-lobby concurrent state across 4 distinct game modes with active player 3D coordinates, health, inventory arrays, and match clocks.
+2. **Snapshot Engine & Cryptographic Signer:** Periodically captures immutable checkpoints signed with full-payload SHA-256 cryptographic digests.
+3. **Continuous WAL Stream:** Emits atomic game mutation events (`PLAYER_MOVE`, `INVENTORY_PICKUP`, `DAMAGE_DEALT`, `SCORE_UPDATE`, `ZONE_SHRINK`).
+4. **Restore-Readiness Drill Harness:** Automated daemon running periodic or on-demand restoration drills in an isolated sandbox.
+5. **WAL Sequence Replay & Idempotency Buffer:** Applies Lamport sequence sorting to resolve network jitter and deduplicates repeated event deliveries.
+6. **SLA Gatekeeper:** Measures empirical recovery time (RTO) against threshold (default 60s) and data staleness (RPO) against threshold (default 30s).
+7. **Automated Root-Cause Diagnostic Engine:** Synthesizes non-specialist summaries for business leaders and technical remediation runbooks for DevOps/SREs.
+

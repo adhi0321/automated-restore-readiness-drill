@@ -1,14 +1,19 @@
-import pytest
+import unittest
 from backend.backup_service import SessionSimulator, create_backup
 from backend.restore_service import perform_restore
 
-def test_successful_restore():
-    sim = SessionSimulator("test2")
-    events = sim.generate_events(5)
-    backup = create_backup("test2", events)
-    
-    result = perform_restore(backup)
-    assert result.status == "SUCCESS"
-    assert result.restored_state is not None
-    assert result.restored_state.version == 5
-    assert result.recovery_time_seconds > 0
+class TestRestore(unittest.TestCase):
+    def test_successful_restore(self):
+        sim = SessionSimulator("test2")
+        events = sim.generate_events(5)
+        backup = create_backup("test2", events)
+        
+        result = perform_restore(backup)
+        self.assertEqual(result.status, "SUCCESS")
+        self.assertIsNotNone(result.restored_state)
+        self.assertEqual(result.restored_state.version, 5)
+        self.assertGreater(result.recovery_time_seconds, 0)
+
+if __name__ == "__main__":
+    unittest.main()
+

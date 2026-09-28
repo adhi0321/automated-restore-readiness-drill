@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Automated Restore-Readiness Drill",
+  "description": "Automated restore-readiness drill engine and audit dashboard for multiplayer session-state systems, verifying RTO, RPO, and state integrity.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

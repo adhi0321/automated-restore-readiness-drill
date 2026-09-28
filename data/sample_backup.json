@@ -1,0 +1,1008 @@
+{
+  "backup_id": "582e8f40-7930-4213-a388-33ebed26b452",
+  "checksum": "fbcd2d538e494f48ec1d56e0dd65313b9e25923587b0671cce4a2777af96db08",
+  "created_at": 1790584364.9524758,
+  "events": [
+    {
+      "event_id": "fa984174-16f1-46b9-af10-7d7bc18e2e4b",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 0
+      },
+      "timestamp": 1790584164.950126,
+      "version": 1
+    },
+    {
+      "event_id": "eeeb23ca-dda3-4548-8b75-2173168172bd",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 100
+      },
+      "timestamp": 1790584166.9501545,
+      "version": 2
+    },
+    {
+      "event_id": "0bdd4cee-dcec-4975-9c2f-cbb0496c5f91",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 200
+      },
+      "timestamp": 1790584168.9501672,
+      "version": 3
+    },
+    {
+      "event_id": "a74c252d-8cf6-440a-96bc-018a8e29bf4d",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 300
+      },
+      "timestamp": 1790584170.950177,
+      "version": 4
+    },
+    {
+      "event_id": "d2d80e25-8d41-4c57-ada3-e4902b06d7ff",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 400
+      },
+      "timestamp": 1790584172.9501863,
+      "version": 5
+    },
+    {
+      "event_id": "62b03521-b3cd-4196-b50d-190764d39691",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 500
+      },
+      "timestamp": 1790584174.9501956,
+      "version": 6
+    },
+    {
+      "event_id": "56098e6e-9aa5-421c-aabe-e50a8c566f84",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 600
+      },
+      "timestamp": 1790584176.9502041,
+      "version": 7
+    },
+    {
+      "event_id": "71a75ad8-ec22-4be9-b337-efa515319b3c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 700
+      },
+      "timestamp": 1790584178.950212,
+      "version": 8
+    },
+    {
+      "event_id": "4a01f09f-7a60-45b4-8b5f-269632eb14d1",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 800
+      },
+      "timestamp": 1790584180.9502213,
+      "version": 9
+    },
+    {
+      "event_id": "29e39126-bd46-47ef-8336-8dc67eef0b74",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 900
+      },
+      "timestamp": 1790584182.9502301,
+      "version": 10
+    },
+    {
+      "event_id": "126051de-f9a6-4d8d-ab9d-dcf2acd82fde",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 1000
+      },
+      "timestamp": 1790584184.9502382,
+      "version": 11
+    },
+    {
+      "event_id": "cead7927-acab-4e6f-9293-80950e9da355",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 1100
+      },
+      "timestamp": 1790584186.9502463,
+      "version": 12
+    },
+    {
+      "event_id": "022623d1-a764-4dd4-891f-b9358f186a84",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 1200
+      },
+      "timestamp": 1790584188.950255,
+      "version": 13
+    },
+    {
+      "event_id": "684df65d-7000-4fd5-8900-2caec29371e4",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 1300
+      },
+      "timestamp": 1790584190.9502625,
+      "version": 14
+    },
+    {
+      "event_id": "927fe22a-3330-4efc-b4c2-276cfe7f3d2b",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 1400
+      },
+      "timestamp": 1790584192.9502702,
+      "version": 15
+    },
+    {
+      "event_id": "a1e4deb6-f148-4f96-9592-bd8a03a6b6f7",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 1500
+      },
+      "timestamp": 1790584194.9502778,
+      "version": 16
+    },
+    {
+      "event_id": "c7994972-242d-4408-82d6-bf3c79c2c57b",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 1600
+      },
+      "timestamp": 1790584196.9502869,
+      "version": 17
+    },
+    {
+      "event_id": "9b127afb-e393-4c01-ade8-d5a7804bc461",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 1700
+      },
+      "timestamp": 1790584198.9502952,
+      "version": 18
+    },
+    {
+      "event_id": "cec08ab0-970d-4224-9b90-59d4c7e8ca8a",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 1800
+      },
+      "timestamp": 1790584200.950303,
+      "version": 19
+    },
+    {
+      "event_id": "6f620fcd-7580-49b0-bdac-7d17867d4e7f",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 1900
+      },
+      "timestamp": 1790584202.9503105,
+      "version": 20
+    },
+    {
+      "event_id": "3d00b088-3879-4f2c-8fe5-607c5a5caa27",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 2000
+      },
+      "timestamp": 1790584204.9503179,
+      "version": 21
+    },
+    {
+      "event_id": "e26cdd0c-ec0e-4a7a-bdb7-f2090be14dd9",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 2100
+      },
+      "timestamp": 1790584206.950351,
+      "version": 22
+    },
+    {
+      "event_id": "61739e6c-9423-4ef7-ae0f-47684adb885f",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 2200
+      },
+      "timestamp": 1790584208.9503665,
+      "version": 23
+    },
+    {
+      "event_id": "79c82c63-1196-4fd4-a0f6-abd215ecc6d7",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 2300
+      },
+      "timestamp": 1790584210.950376,
+      "version": 24
+    },
+    {
+      "event_id": "b87d8ab6-b440-4096-b60b-d7455c872b22",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 2400
+      },
+      "timestamp": 1790584212.950384,
+      "version": 25
+    },
+    {
+      "event_id": "358de820-129b-4a5b-87ca-f7888fe6a2ae",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 2500
+      },
+      "timestamp": 1790584214.9503918,
+      "version": 26
+    },
+    {
+      "event_id": "ba6c4224-d228-4b2e-948b-460abfb6fbc4",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 2600
+      },
+      "timestamp": 1790584216.9503994,
+      "version": 27
+    },
+    {
+      "event_id": "d8f92d60-69cb-4b86-a6dc-7fac27501e72",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 2700
+      },
+      "timestamp": 1790584218.9504073,
+      "version": 28
+    },
+    {
+      "event_id": "87d5eb9a-1645-4513-8338-dd467baae39f",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 2800
+      },
+      "timestamp": 1790584220.950415,
+      "version": 29
+    },
+    {
+      "event_id": "62b6d817-ed22-423c-8480-ecfeb4595a21",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 2900
+      },
+      "timestamp": 1790584222.9504225,
+      "version": 30
+    },
+    {
+      "event_id": "baa8ef92-b40d-4a17-a417-4d8e6fcb5e28",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 3000
+      },
+      "timestamp": 1790584224.95043,
+      "version": 31
+    },
+    {
+      "event_id": "a199efea-3942-49c4-8216-56fc50122272",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 3100
+      },
+      "timestamp": 1790584226.950444,
+      "version": 32
+    },
+    {
+      "event_id": "c7c4aa95-ba21-4d10-b204-4ceded07da4c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 3200
+      },
+      "timestamp": 1790584228.9504561,
+      "version": 33
+    },
+    {
+      "event_id": "d2e5cb24-b003-43cb-aeef-ba981727b271",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 3300
+      },
+      "timestamp": 1790584230.9504657,
+      "version": 34
+    },
+    {
+      "event_id": "ef00c333-717a-4b99-9fbb-261b30bdfb2a",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 3400
+      },
+      "timestamp": 1790584232.9504726,
+      "version": 35
+    },
+    {
+      "event_id": "534bfc36-8fc4-474e-bc70-04544a755d96",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 3500
+      },
+      "timestamp": 1790584234.9504795,
+      "version": 36
+    },
+    {
+      "event_id": "d85ec846-6010-4eae-b717-8de36776dcdb",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 3600
+      },
+      "timestamp": 1790584236.950497,
+      "version": 37
+    },
+    {
+      "event_id": "bbe07f96-62a1-41de-afe1-69445467510d",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 3700
+      },
+      "timestamp": 1790584238.9505038,
+      "version": 38
+    },
+    {
+      "event_id": "caf8bf16-0fd0-4d4b-a461-44ac194bc7b7",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 3800
+      },
+      "timestamp": 1790584240.9505105,
+      "version": 39
+    },
+    {
+      "event_id": "fe01a9e8-8df7-4553-a5b7-2039f3ab08aa",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 3900
+      },
+      "timestamp": 1790584242.9505174,
+      "version": 40
+    },
+    {
+      "event_id": "3e5941c2-3cf1-49bb-a6da-5e95dffe1c42",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 4000
+      },
+      "timestamp": 1790584244.9505372,
+      "version": 41
+    },
+    {
+      "event_id": "d9afc0a1-145a-4882-a1e1-b1e34922060c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 4100
+      },
+      "timestamp": 1790584246.9505498,
+      "version": 42
+    },
+    {
+      "event_id": "f5429498-4885-4a92-a282-67a663612384",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 4200
+      },
+      "timestamp": 1790584248.950558,
+      "version": 43
+    },
+    {
+      "event_id": "cf8c3643-4207-4c54-8989-3b84bf78186b",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 4300
+      },
+      "timestamp": 1790584250.950565,
+      "version": 44
+    },
+    {
+      "event_id": "7064138e-5aa8-4c68-a1b4-417d0a6d8937",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 4400
+      },
+      "timestamp": 1790584252.9505718,
+      "version": 45
+    },
+    {
+      "event_id": "d79d155a-a64d-4817-a375-63c83e2e4cb9",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 4500
+      },
+      "timestamp": 1790584254.9505782,
+      "version": 46
+    },
+    {
+      "event_id": "93f53f23-3bd4-4781-ad82-80d0f52c22b5",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 4600
+      },
+      "timestamp": 1790584256.950585,
+      "version": 47
+    },
+    {
+      "event_id": "3173011e-35b0-4c8c-a6a0-188033959746",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 4700
+      },
+      "timestamp": 1790584258.9505913,
+      "version": 48
+    },
+    {
+      "event_id": "72e95cd4-6ffb-4d62-a2b1-fb12fc0507a1",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 4800
+      },
+      "timestamp": 1790584260.9505975,
+      "version": 49
+    },
+    {
+      "event_id": "ff2b4f30-2f6a-41ab-9c09-97268c83e328",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 4900
+      },
+      "timestamp": 1790584262.9506044,
+      "version": 50
+    },
+    {
+      "event_id": "61697196-8780-4b2a-861d-5b1d2b4cac4c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 5000
+      },
+      "timestamp": 1790584264.9506109,
+      "version": 51
+    },
+    {
+      "event_id": "2196df22-2ae4-4706-9cc8-01edf4096ca4",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 5100
+      },
+      "timestamp": 1790584266.9506176,
+      "version": 52
+    },
+    {
+      "event_id": "9168377f-b55f-44bf-b257-57e5f8fc101c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 5200
+      },
+      "timestamp": 1790584268.950624,
+      "version": 53
+    },
+    {
+      "event_id": "146d6db3-8411-4a46-ac74-beee0af1772a",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 5300
+      },
+      "timestamp": 1790584270.9506361,
+      "version": 54
+    },
+    {
+      "event_id": "a8a189b0-ba8e-416a-8995-ecaeee13117e",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 5400
+      },
+      "timestamp": 1790584272.950647,
+      "version": 55
+    },
+    {
+      "event_id": "57a90347-022c-4aad-bc3b-5f9c149b60b5",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 5500
+      },
+      "timestamp": 1790584274.9506578,
+      "version": 56
+    },
+    {
+      "event_id": "b37598f2-1b31-429a-981d-fff9bb34b788",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 5600
+      },
+      "timestamp": 1790584276.9506667,
+      "version": 57
+    },
+    {
+      "event_id": "5dccefd8-9464-49da-93fc-a43aa0c179b4",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 5700
+      },
+      "timestamp": 1790584278.9506736,
+      "version": 58
+    },
+    {
+      "event_id": "7463e09c-e74c-45a4-b2a8-ad31bb329c0d",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 5800
+      },
+      "timestamp": 1790584280.95068,
+      "version": 59
+    },
+    {
+      "event_id": "57eb95d5-ff28-4a19-ad54-fb57d07d9b30",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 5900
+      },
+      "timestamp": 1790584282.9506867,
+      "version": 60
+    },
+    {
+      "event_id": "87c0fc34-a3b5-458c-ae05-fd5220f5a1a6",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 6000
+      },
+      "timestamp": 1790584284.9506931,
+      "version": 61
+    },
+    {
+      "event_id": "fba084a6-d552-453d-a560-6c76688c3f63",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 6100
+      },
+      "timestamp": 1790584286.9506996,
+      "version": 62
+    },
+    {
+      "event_id": "6aef39c6-764e-4480-b738-af44d0fa070c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 6200
+      },
+      "timestamp": 1790584288.950706,
+      "version": 63
+    },
+    {
+      "event_id": "526b638d-ec81-47ce-8cb2-b721765c372a",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 6300
+      },
+      "timestamp": 1790584290.950713,
+      "version": 64
+    },
+    {
+      "event_id": "e87263ec-c9b1-4c53-9a5e-28da6f8fad5c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 6400
+      },
+      "timestamp": 1790584292.9507287,
+      "version": 65
+    },
+    {
+      "event_id": "2bf11da0-9474-4f1f-94ca-47a391b22481",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 6500
+      },
+      "timestamp": 1790584294.9507413,
+      "version": 66
+    },
+    {
+      "event_id": "453035e6-bac3-4f5d-8ba1-13ab53691756",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 6600
+      },
+      "timestamp": 1790584296.95075,
+      "version": 67
+    },
+    {
+      "event_id": "8971dfc1-6d28-43f4-847b-5aa8de02b614",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 6700
+      },
+      "timestamp": 1790584298.9507947,
+      "version": 68
+    },
+    {
+      "event_id": "8ad9d6fc-5b12-42a1-9892-b303400f8115",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 6800
+      },
+      "timestamp": 1790584300.9508083,
+      "version": 69
+    },
+    {
+      "event_id": "6c2c0320-5b5a-4184-9bb0-bd84891c4a90",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 6900
+      },
+      "timestamp": 1790584302.9508164,
+      "version": 70
+    },
+    {
+      "event_id": "4b4e26ba-5126-45ff-8903-647b638f0430",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 7000
+      },
+      "timestamp": 1790584304.9508233,
+      "version": 71
+    },
+    {
+      "event_id": "aaf24ae1-897c-4cf6-a82a-14b4fddbbe83",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 7100
+      },
+      "timestamp": 1790584306.9508321,
+      "version": 72
+    },
+    {
+      "event_id": "4a055f2a-a5a3-4a98-82ab-da3a263edc57",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 7200
+      },
+      "timestamp": 1790584308.9508717,
+      "version": 73
+    },
+    {
+      "event_id": "3486c868-8906-4177-941c-f06c50ff520d",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 7300
+      },
+      "timestamp": 1790584310.950884,
+      "version": 74
+    },
+    {
+      "event_id": "d54d6b47-72ac-44a0-8a77-47532c2fcad2",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 7400
+      },
+      "timestamp": 1790584312.9508924,
+      "version": 75
+    },
+    {
+      "event_id": "c54baed8-8fd2-4c73-ae7c-7533f6cbb354",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 7500
+      },
+      "timestamp": 1790584314.9509006,
+      "version": 76
+    },
+    {
+      "event_id": "58707e64-8595-4003-9f4a-62e2fee6f24d",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 7600
+      },
+      "timestamp": 1790584316.9509075,
+      "version": 77
+    },
+    {
+      "event_id": "5ddbd6d9-dc8f-4e01-87a0-2f1f00718611",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 7700
+      },
+      "timestamp": 1790584318.9509451,
+      "version": 78
+    },
+    {
+      "event_id": "0651a00b-68b3-4a6c-942d-525f9dda218a",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 7800
+      },
+      "timestamp": 1790584320.950959,
+      "version": 79
+    },
+    {
+      "event_id": "d33ce645-f620-4c48-98af-f4e34cbf35d4",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 7900
+      },
+      "timestamp": 1790584322.9509678,
+      "version": 80
+    },
+    {
+      "event_id": "0ddce052-08d2-4e67-959e-2c647dd47e48",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 8000
+      },
+      "timestamp": 1790584324.9509747,
+      "version": 81
+    },
+    {
+      "event_id": "3db34206-0688-4f8c-9b9b-0071fb858f3e",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 8100
+      },
+      "timestamp": 1790584326.9509816,
+      "version": 82
+    },
+    {
+      "event_id": "76e7c26c-56ae-490a-886c-072730413878",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 8200
+      },
+      "timestamp": 1790584328.950988,
+      "version": 83
+    },
+    {
+      "event_id": "d9291d19-0dfd-4808-a0d3-399214faf2c1",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 8300
+      },
+      "timestamp": 1790584330.9509962,
+      "version": 84
+    },
+    {
+      "event_id": "a389c457-cb9c-4251-a722-f76fa768d0ec",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 8400
+      },
+      "timestamp": 1790584332.951028,
+      "version": 85
+    },
+    {
+      "event_id": "4057ca88-4ed1-466a-b7cf-05cd32b000ca",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 8500
+      },
+      "timestamp": 1790584334.9510372,
+      "version": 86
+    },
+    {
+      "event_id": "db4dd5ce-f7e5-4b50-9988-50909e3c146c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 8600
+      },
+      "timestamp": 1790584336.9510443,
+      "version": 87
+    },
+    {
+      "event_id": "0a20f4d0-5057-407e-b012-11e95badcb2c",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 8700
+      },
+      "timestamp": 1790584338.951051,
+      "version": 88
+    },
+    {
+      "event_id": "722b5f21-1510-45c3-a835-d2763952f027",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 8800
+      },
+      "timestamp": 1790584340.9510577,
+      "version": 89
+    },
+    {
+      "event_id": "67878e48-76f9-4a4f-9bbf-7f8869a4f89f",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 8900
+      },
+      "timestamp": 1790584342.9510643,
+      "version": 90
+    },
+    {
+      "event_id": "f8c48ff8-5a9f-4811-93f3-7f93e6be1e41",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 9000
+      },
+      "timestamp": 1790584344.951071,
+      "version": 91
+    },
+    {
+      "event_id": "e9cdce0f-0633-4742-9a7a-f6215c71f8b2",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 9100
+      },
+      "timestamp": 1790584346.9510796,
+      "version": 92
+    },
+    {
+      "event_id": "0527cd2f-40b3-43cf-b222-0338fc23f4df",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 9200
+      },
+      "timestamp": 1790584348.95111,
+      "version": 93
+    },
+    {
+      "event_id": "432a284b-e861-4ded-aa00-2307fd8a17b1",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 9300
+      },
+      "timestamp": 1790584350.951119,
+      "version": 94
+    },
+    {
+      "event_id": "d9ba3aa2-2c36-41d3-b57b-16fed8248968",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 9400
+      },
+      "timestamp": 1790584352.9511259,
+      "version": 95
+    },
+    {
+      "event_id": "56945ebe-0ebb-4178-ad0e-9b9a04f2b596",
+      "event_type": "update",
+      "payload": {
+        "player_count": 10,
+        "score": 9500
+      },
+      "timestamp": 1790584354.9511323,
+      "version": 96
+    },
+    {
+      "event_id": "e762cb30-d95a-4577-a4a8-719a9d59b767",
+      "event_type": "update",
+      "payload": {
+        "player_count": 11,
+        "score": 9600
+      },
+      "timestamp": 1790584356.9511387,
+      "version": 97
+    },
+    {
+      "event_id": "08162148-93eb-427d-afe7-b07ef73aaaf9",
+      "event_type": "update",
+      "payload": {
+        "player_count": 12,
+        "score": 9700
+      },
+      "timestamp": 1790584358.9511452,
+      "version": 98
+    },
+    {
+      "event_id": "2a916a7d-11a2-4027-9558-0cc4f91e0806",
+      "event_type": "update",
+      "payload": {
+        "player_count": 13,
+        "score": 9800
+      },
+      "timestamp": 1790584360.9511516,
+      "version": 99
+    },
+    {
+      "event_id": "888f92e8-47d7-4ac7-b59d-ebf44a95b26d",
+      "event_type": "update",
+      "payload": {
+        "player_count": 14,
+        "score": 9900
+      },
+      "timestamp": 1790584362.9511597,
+      "version": 100
+    }
+  ],
+  "source_session_version": 100
+}

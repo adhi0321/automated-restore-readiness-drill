@@ -45,3 +45,27 @@ def inject_delayed_event(backup: BackupData) -> BackupData:
         backup_json = delayed_backup.model_dump_json(exclude={"checksum"})
         delayed_backup.checksum = generate_checksum(backup_json)
     return delayed_backup
+
+def inject_truncated_wal(backup: BackupData) -> BackupData:
+    """Simulates abrupt crash leaving truncated/partial WAL events."""
+    truncated = copy.deepcopy(backup)
+    if len(truncated.events) > 2:
+        truncated.events = truncated.events[:len(truncated.events) // 2]
+    from .backup_service import generate_checksum
+    backup_json = truncated.model_dump_json(exclude={"checksum"})
+    truncated.checksum = generate_checksum(backup_json)
+    return truncated
+
+def inject_concurrent_conflict(backup: BackupData) -> BackupData:
+    """Simulates two conflicting mutations on the same key with identical version."""
+    conflict_backup = copy.deepcopy(backup)
+    if conflict_backup.events:
+        conflict_event = copy.deepcopy(conflict_backup.events[-1])
+        conflict_event.event_id = "conflict-" + conflict_event.event_id
+        conflict_event.payload = {"contested_resource": "PLAYER_B_CLAIM"}
+        conflict_backup.events.append(conflict_event)
+        from .backup_service import generate_checksum
+        backup_json = conflict_backup.model_dump_json(exclude={"checksum"})
+        conflict_backup.checksum = generate_checksum(backup_json)
+    return conflict_backup
+
