@@ -13,7 +13,10 @@ from .failure_injection import (
     inject_delayed_event,
     inject_truncated_wal,
     inject_concurrent_conflict,
+    inject_rto_breach,
+    inject_rpo_breach,
 )
+
 import os
 import time
 
@@ -77,24 +80,29 @@ def execute_drill(scenario: str = Query("NORMAL", description="Failure scenario 
     expected_state = rebuild_state(base_backup)
     failure_time = time.time()
     
-    if scenario == "CORRUPTED" or scenario == "CORRUPT_CHECKSUM":
+    if scenario in ("CORRUPTED", "CORRUPT_CHECKSUM"):
         test_backup = inject_corrupted_backup(base_backup)
-    elif scenario == "DUPLICATE" or scenario == "DUPLICATE_EVENT":
+    elif scenario in ("DUPLICATE", "DUPLICATE_EVENT"):
         test_backup = inject_duplicate_event(base_backup)
-    elif scenario == "OUT_OF_ORDER":
+    elif scenario in ("OUT_OF_ORDER", "OUT_OF_ORDER_EVENT"):
         test_backup = inject_out_of_order_events(base_backup)
-    elif scenario == "DELAYED" or scenario == "DELAYED_EVENT":
+    elif scenario in ("DELAYED", "DELAYED_STRAGGLER", "DELAYED_EVENT"):
         test_backup = inject_delayed_event(base_backup)
     elif scenario == "TRUNCATED_WAL":
         test_backup = inject_truncated_wal(base_backup)
     elif scenario == "CONCURRENT_CONFLICT":
         test_backup = inject_concurrent_conflict(base_backup)
+    elif scenario == "RTO_BREACH":
+        test_backup = inject_rto_breach(base_backup)
+    elif scenario == "RPO_BREACH":
+        test_backup = inject_rpo_breach(base_backup, failure_time)
     else:
         test_backup = base_backup
         
-    result = run_drill(test_backup, expected_state, failure_time)
+    result = run_drill(test_backup, expected_state, failure_time, scenario=scenario, session_id=sim.session_id)
     save_drill_result(result)
     return result
+
 
 @app.post("/api/experiments/batch")
 def run_batch_experiment(count: int = Query(10, ge=1, le=50)):

@@ -1,0 +1,90 @@
+{
+  "experiment_timestamp": "2026-09-30 04:27:29 UTC",
+  "random_seed": 42,
+  "targets": {
+    "rto_target_seconds": 60,
+    "rpo_target_seconds": 30,
+    "target_recovery_success_rate": 100.0
+  },
+  "baseline_metrics": {
+    "total_backups_monitored": 30,
+    "backups_reported_successful": 30,
+    "reported_success_rate": 100.0,
+    "actual_recovery_success_rate": 33.33,
+    "undetected_failures": 20,
+    "failure_detection_rate": 0.0,
+    "checksum_validation_rate": 0.0,
+    "average_downtime_hours": 4.5
+  },
+  "prototype_metrics": {
+    "total_drills": 30,
+    "successful_drills": 19,
+    "failed_drills": 11,
+    "recovery_rate_within_rto_rpo": 63.33,
+    "rto_pass_rate": 93.33,
+    "rpo_pass_rate": 93.33,
+    "checksum_pass_rate": 83.33,
+    "state_integrity_pass_rate": 86.67,
+    "failure_detection_rate": 100.0,
+    "undetected_failures": 0,
+    "average_recovery_time_seconds": 5.0,
+    "min_recovery_time_seconds": 0.0101,
+    "max_recovery_time_seconds": 74.85
+  },
+  "scenario_breakdown": {
+    "NORMAL": {
+      "count": 10,
+      "passed": 10,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "CORRUPT_CHECKSUM": {
+      "count": 3,
+      "passed": 0,
+      "failed": 3,
+      "pass_rate": 0.0
+    },
+    "DUPLICATE_EVENT": {
+      "count": 3,
+      "passed": 3,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "OUT_OF_ORDER": {
+      "count": 3,
+      "passed": 3,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "DELAYED_STRAGGLER": {
+      "count": 3,
+      "passed": 3,
+      "failed": 0,
+      "pass_rate": 100.0
+    },
+    "TRUNCATED_WAL": {
+      "count": 2,
+      "passed": 0,
+      "failed": 2,
+      "pass_rate": 0.0
+    },
+    "RTO_BREACH": {
+      "count": 2,
+      "passed": 0,
+      "failed": 2,
+      "pass_rate": 0.0
+    },
+    "RPO_BREACH": {
+      "count": 2,
+      "passed": 0,
+      "failed": 2,
+      "pass_rate": 0.0
+    },
+    "CONCURRENT_CONFLICT": {
+      "count": 2,
+      "passed": 0,
+      "failed": 2,
+      "pass_rate": 0.0
+    }
+  }
+}

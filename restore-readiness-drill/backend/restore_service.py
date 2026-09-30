@@ -37,17 +37,22 @@ def perform_restore(backup: BackupData) -> RestoreAttemptResult:
     attempt_id = str(uuid.uuid4())
     
     try:
-        # Provide realistic (simulated) delay
-        time.sleep(0.1) 
+        simulated_delay = getattr(backup, 'simulated_rto_delay', 0.0)
+        if simulated_delay > 0:
+            recovery_time = simulated_delay
+        else:
+            # Provide realistic minimal delay for state rebuild
+            time.sleep(0.01)
+            recovery_time = time.time() - start_time
+            
         restored_state = rebuild_state(backup)
-        
-        end_time = time.time()
+        end_time = start_time + recovery_time
         return RestoreAttemptResult(
             attempt_id=attempt_id,
             backup_id=backup.backup_id,
             started_at=start_time,
             completed_at=end_time,
-            recovery_time_seconds=end_time - start_time,
+            recovery_time_seconds=recovery_time,
             status="SUCCESS",
             restored_state=restored_state
         )
@@ -62,3 +67,4 @@ def perform_restore(backup: BackupData) -> RestoreAttemptResult:
             status="ERROR",
             error_message=str(e)
         )
+

@@ -1,0 +1,47 @@
+[
+  {
+    "scenario": "DUPLICATE_EVENT",
+    "expected_version": 10,
+    "restored_version": 10,
+    "expected_state": {
+      "player_count": 14,
+      "score": 900
+    },
+    "restored_state": {
+      "player_count": 14,
+      "score": 900
+    },
+    "differences": "None (Exact Match)",
+    "state_integrity_result": "PASS"
+  },
+  {
+    "scenario": "OUT_OF_ORDER",
+    "expected_version": 10,
+    "restored_version": 10,
+    "expected_state": {
+      "player_count": 14,
+      "score": 900
+    },
+    "restored_state": {
+      "player_count": 14,
+      "score": 900
+    },
+    "differences": "None (Exact Match)",
+    "state_integrity_result": "PASS"
+  },
+  {
+    "scenario": "DELAYED_STRAGGLER",
+    "expected_version": 10,
+    "restored_version": 10,
+    "expected_state": {
+      "player_count": 14,
+      "score": 900
+    },
+    "restored_state": {
+      "player_count": 14,
+      "score": 900
+    },
+    "differences": "None (Exact Match)",
+    "state_integrity_result": "PASS"
+  }
+]

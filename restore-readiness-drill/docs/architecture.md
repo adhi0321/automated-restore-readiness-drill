@@ -52,3 +52,22 @@ graph TD
 6. **SLA Gatekeeper:** Measures empirical recovery time (RTO) against threshold (default 60s) and data staleness (RPO) against threshold (default 30s).
 7. **Automated Root-Cause Diagnostic Engine:** Synthesizes non-specialist summaries for business leaders and technical remediation runbooks for DevOps/SREs.
 
+## 4. Experiment Architecture & System Roles (Phase 5)
+
+The drill engine is partitioned into 11 clearly defined architectural roles across code and execution pipelines:
+
+| Role ID | Role Name | System Implementation | Core Responsibilities |
+|:---|:---|:---|:---|
+| **ROLE 1** | **Session Generator** | `backend/backup_service.py` (`SessionSimulator`) | Generates active multiplayer sessions across 4 lobbies, populates player states (coordinates, health, inventory), and emits deterministic tick events. |
+| **ROLE 2** | **Event Processor** | `backend/restore_service.py` (`rebuild_state`) | Ingests Write-Ahead Log events, detects duplicate event IDs via bloom filter, buffers and reorders out-of-order sequence packets, handles delayed stragglers, and preserves state integrity. |
+| **ROLE 3** | **Backup Generator** | `backend/backup_service.py` (`create_backup`) | Creates atomic session snapshots, records UTC timestamps, computes SHA-256 state tree digest, and writes immutable backup manifest records. |
+| **ROLE 4** | **Restore Engine** | `backend/restore_service.py` (`perform_restore`) | Selects backup archives, provisions isolated memory sandboxes, executes state deserialization, and measures exact millisecond recovery elapsed time. |
+| **ROLE 5** | **Validation Engine** | `backend/validation_service.py` (`run_drill`) | Computes and verifies cryptographic SHA-256 digest equality, audits record structure, and conducts field-level comparison between expected state and restored state. |
+| **ROLE 6** | **Failure Injector** | `backend/failure_injection.py` (9 Functions) | Programmatically injects realistic failure conditions: corrupted payload bit-rot, duplicate packets, delayed stragglers, out-of-order UDP jitter, truncated WALs, RTO storage lag, RPO backup lag, and concurrent mutation races. |
+| **ROLE 7** | **Metrics Engine** | `backend/metrics.py` & `run_final_experiment.py` | Measures RTO duration, calculates RPO data staleness delta, evaluates SLA compliance pass rates, computes checksum pass rate, state validation pass rate, and the master **Successful Recovery Rate Within RTO/RPO**. |
+| **ROLE 8** | **Baseline Engine** | `run_final_experiment.py` | Executes the traditional passive backup check (validates exit code 0 without restore testing) to provide an empirical control comparison under identical test populations. |
+| **ROLE 9** | **Experiment Runner** | `run_final_experiment.py` | Sets fixed random seed (42), executes 30 planned drills across 9 failure modes, coordinates baseline and prototype passes, and persists raw results to SQLite and disk. |
+| **ROLE 10** | **Reporting Engine** | `run_final_experiment.py` & `backend/main.py` | Aggregates drill telemetry, formats evidence artifacts (`final_results.csv`, `metrics_summary.json`, etc.), and synthesizes structured Markdown audit reports. |
+| **ROLE 11** | **Stakeholder Explanation Layer** | `backend/validation_service.py` & `app/page.tsx` | Translates technical execution anomalies into clear, non-specialist English verdicts (e.g., explaining why a successful backup creation was not recovery-ready), and prioritizes operational action items (P0/P1/P2). |
+
+

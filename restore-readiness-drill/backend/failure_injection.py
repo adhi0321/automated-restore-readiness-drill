@@ -69,3 +69,21 @@ def inject_concurrent_conflict(backup: BackupData) -> BackupData:
         conflict_backup.checksum = generate_checksum(backup_json)
     return conflict_backup
 
+def inject_rto_breach(backup: BackupData) -> BackupData:
+    """Simulates storage I/O bottleneck causing restore time to exceed RTO target (60s)."""
+    breach_backup = copy.deepcopy(backup)
+    setattr(breach_backup, 'simulated_rto_delay', 74.85)
+    return breach_backup
+
+def inject_rpo_breach(backup: BackupData, failure_time: float) -> BackupData:
+    """Simulates missed snapshot schedule causing data staleness to exceed RPO target (30s)."""
+    breach_backup = copy.deepcopy(backup)
+    # Set all event timestamps backwards so lag is 85.0s > 30s
+    for i, event in enumerate(breach_backup.events):
+        event.timestamp = failure_time - 85.0 + (i * 0.1)
+    from .backup_service import generate_checksum
+    backup_json = breach_backup.model_dump_json(exclude={"checksum"})
+    breach_backup.checksum = generate_checksum(backup_json)
+    return breach_backup
+
+

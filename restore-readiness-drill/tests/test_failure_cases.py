@@ -9,7 +9,9 @@ from backend.failure_injection import (
     inject_out_of_order_events,
     inject_delayed_event,
     inject_truncated_wal,
-    inject_concurrent_conflict
+    inject_concurrent_conflict,
+    inject_rto_breach,
+    inject_rpo_breach
 )
 
 class TestFailureCases(unittest.TestCase):
@@ -50,15 +52,34 @@ class TestFailureCases(unittest.TestCase):
     def test_truncated_wal(self):
         truncated = inject_truncated_wal(self.backup)
         result = run_drill(truncated, self.expected, time.time())
-        # Partial WAL should execute safely and report status
-        self.assertIn(result["overall_result"], ["PASS", "FAIL"])
+        # Partial WAL should execute safely and report failure
+        self.assertEqual(result["state_match"], 0)
+        self.assertEqual(result["overall_result"], "FAIL")
 
     def test_concurrent_conflict(self):
         conflict = inject_concurrent_conflict(self.backup)
         result = run_drill(conflict, self.expected, time.time())
-        self.assertIn(result["overall_result"], ["PASS", "FAIL"])
+        self.assertEqual(result["state_match"], 0)
+        self.assertEqual(result["overall_result"], "FAIL")
+
+    def test_rto_breach(self):
+        breached = inject_rto_breach(self.backup)
+        result = run_drill(breached, self.expected, time.time())
+        self.assertEqual(result["rto_pass"], 0)
+        self.assertEqual(result["overall_result"], "FAIL")
+        self.assertGreater(result["actual_rto"], 60.0)
+
+    def test_rpo_breach(self):
+        now = time.time()
+        breached = inject_rpo_breach(self.backup, now)
+        result = run_drill(breached, self.expected, now)
+        self.assertEqual(result["rpo_pass"], 0)
+        self.assertEqual(result["overall_result"], "FAIL")
+        self.assertGreater(result["actual_rpo"], 30.0)
 
 if __name__ == "__main__":
     unittest.main()
+
+
 
 
